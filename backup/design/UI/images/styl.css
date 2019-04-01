@@ -1,0 +1,45 @@
+.mySlides
+{
+	width: 100%;
+	height: 500px;
+}
+footer
+{
+     background-color: teal;
+     
+}
+footer ul li 
+{
+	list-style: none;
+	color: white;
+}
+footer ul li a
+{
+	
+	color: white;
+}
+#ftr
+{
+	color:white;
+}
+
+
+
+#news:hover 
+{
+	color: blue;
+}
+
+
+.visit
+{
+	margin-top: 60px;
+	color: black;
+	background: grey;
+}
+#navi
+{
+	padding-bottom:10px;
+}
+
+
