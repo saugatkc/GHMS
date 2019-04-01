@@ -15,7 +15,7 @@ class Room extends Migration
     {
          Schema::create('rooms', function (Blueprint $table) {
            
-            $table->increments('roomNo');
+            $table->increments('id');
             $table->string('roomType');
             $table->integer('price');
 

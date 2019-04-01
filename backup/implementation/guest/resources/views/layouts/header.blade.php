@@ -17,7 +17,6 @@
    <link rel="stylesheet" type="text/css" href="styl.css">
    <script src="bootstrap/js/jquery.min.js"></script>
    <script src="bootstrap/js/bootstrap.min.js"></script>
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -49,7 +48,7 @@
           <a class="nav-link" href="{!! url('contactUs') !!}"><p class=text><h5>Contact</h5></p></a>
         </li>  
         <li class="nav-items">
-          <a class="nav-link" href="reservation"><p class=text><h5>Reservation</h5></p></a>
+          <a class="nav-link" href="{!! url('/reservation') !!}"><p class=text><h5>Reservation</h5></p></a>
         </li> 
           
       </ul>
