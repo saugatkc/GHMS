@@ -82,13 +82,6 @@ class RoomController extends Controller
 
     public function update(Request $request, $id)
     {
-        // $this->validate($request, [
-        //     'title' => 'required|max:150',
-        //     'description' => 'nullable',
-        //     'status' => 'required|in:0,1',
-        //     'image' => 'nullable|image|max:2048'
-        // ]);
-
         $room = Room::find($id);
 
         if ($request->hasFile('image')) {
@@ -124,6 +117,22 @@ class RoomController extends Controller
         $room->status = $form_req['status'];
         $room->save();
         return redirect()->to('/roomDetails')->with('Success','room successfully updated');
+    }
+
+
+    public function search()
+    {
+            return view('system.searchroom');
+     
+    }
+
+    public function found(Request $request)
+    {
+            $time_from = $request->checkIn;
+            $time_to = $request->checkOut;
+            $roomType=$request->roomType
+            $rooms = DB::select('select * from rooms where id not in (select roomId from bookings where time_from >= {{ $time_from }} OR time_to <= {{ $time_to group by roomId}}) ')
+        return view('system.avilabelRooms', compact('rooms', 'time_from', 'time_to'));
     }
 }
 

@@ -34,3 +34,18 @@ Route::delete('/rooms/delete/{roomNo}','RoomController@destroy');
 // view edit form
 Route::get('room/edit/{id}', 'RoomController@edit'); //edit
 Route::put('room/{id}', 'RoomController@update'); //update
+
+
+// open find room page
+// Route::get('/reservation', 'BookingController@create');
+
+
+// search for available room
+Route::get('/reservation', 'roomController@search');
+Route::post('/avirooms', 'roomController@found');
+
+
+Route::post('/newBooking', 'BookingController@newBooking');
+
+
+
