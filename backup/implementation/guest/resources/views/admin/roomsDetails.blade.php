@@ -1,7 +1,8 @@
-@extends('layouts.layout')
+@extends('layouts.adminlayout')
 @section('title') Rooms  @stop
 @section('content')
-<div class="row">
+
+<div class="container">
 	<div class="col-md-12">
 		<br /><br><br><br>
 		<h3 align="center">Room Data</h3>

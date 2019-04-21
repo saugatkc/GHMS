@@ -34,33 +34,68 @@
     <div id="app">
         <nav class="navbar navbar-expand-sm bg-info navbar-light fixed-top navi">
             <div class="container">
-                 <a class="navbar-brand" href="{!! url('home') !!}">
-    <h1><i class="fas fa-home"></i><font face="Kristen ITC">Trisa Guest House</font></h1></a>
+                
+    <h1><i class="fas fa-home"></i><font face="Kristen ITC">Trisa Guest House</font></h1>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav menu">
-        <li class="nav-item">
-          <a class="nav-link active " href="{!! url('home') !!}"><p class=text><h5>Home</h5></p></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{!! url('/aboutUs') !!}"><p class=text><h5>About us</h5></p></a>
-        </li> 
-        <li class="nav-item">
-          <a class="nav-link" href="{!! url('contactUs') !!}"><p class=text><h5>Contact</h5></p></a>
-        </li>  
-        <li class="nav-items">
-          <a class="nav-link" href="{!! url('/reservation') !!}"><p class=text><h5>Reservation</h5></p></a>
-        </li> 
-        <li class="nav-items">
-          <a class="nav-link" href="{!! url('/MyBookings') !!}"><p class=text><h5>My Stays</h5></p></a>
-        </li>      
-        <li class="nav-items">
-          <a class="nav-link" href="{!! url('/menu') !!}"><p class=text><h5>Menu</h5></p></a>
-        </li>     
-      </ul>
-    </div> 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mx-auto">
+
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/users">Customers
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        Room
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/roomDetails">All Rooms</a>
+                                        <a class="dropdown-item" href="/room">Add Room</a>
+                                       
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        Menu
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/adminMenu">Items</a>
+                                        <a class="dropdown-item" href="/itemForm">Add Item</a>
+                                       
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        Booking
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/curentlyBooked">bookings</a>
+                                        <a class="dropdown-item" href="/stayingGuest">curent staying</a>
+                                        <a class="dropdown-item" href="/checkedOut">Checked Out guests</a>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        Messages
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="/newMessages">New messages</a>
+                                        <a class="dropdown-item" href="/oldMessages">Old Messages</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -102,31 +137,13 @@
                         @endguest
                        
                     </ul>
-                      <i class="fas fa-info-circle"data-target="#modalHelp" data-toggle="modal" ></i>
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
+
             @yield('content')
         </main>
     </div>
-
-
-    <div class="modal fade" id="modalHelp">
-  <div class="modal-dialog modal-dialog-center modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-         &nbsp &nbsp
-        <h1 class="text-center text-danger" id="titleSignup"><i class="fas fa-home"></i><font face="Kristen ITC">Trisa Guest House</font></h1>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body" id="scrollSignup"  style="height: 700px;">
-        <embed src="userManual.pdf" type="application/pdf" width="100%" height="99%"/>
-        
-    </div>
-    </div>
-  </div>
-</div>
 </body>
 </html>

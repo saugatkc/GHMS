@@ -1,9 +1,9 @@
-@extends('layouts.layout')
+@extends('layouts.adminlayout')
 @section('title') edit room  @stop
 @section('content')
 <br><br><br><br>
  <div class="container">
-        <h2> Room control</h2>
+        <h2> Edit Room</h2>
         @if(session()->has('success'))
             <div class="alert-success">
                 <h1> {!! session()->get('success') !!}</h1>
@@ -28,10 +28,10 @@
                     {!! method_field('put') !!}
            		 <div class="form-group">
               		 <select class="form-control{{ $errors->has('roomType') ? ' is-invalid' : '' }}" value="{{ old('roomType') }}" name="roomType" required>
-               		 <option class="mbr-text pl-5 mbr-fonts-style display-4" value="{!! $room->roomType !!}"> {!! $room->roomType !!}</option>
-               		 <option class="mbr-text pl-5 mbr-fonts-style display-4" value="singel">singel</option>
-                	 <option class="mbr-text pl-5 mbr-fonts-style display-4" value="coupel">coupel</option>
-                	 <option class="mbr-text pl-5 mbr-fonts-style display-4" value="family">family</option>
+               		 <option  value="{!! $room->roomType !!}"> {!! $room->roomType !!}</option>
+                   <option  value="single">Single</option>
+                   <option  value="couple">Couple</option>
+                   <option  value="family">Family</option>
              		 </select>
           		 </div>
                  <br>

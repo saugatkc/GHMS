@@ -1,6 +1,7 @@
 @extends('layouts.layout')
 @section('title') Home  @stop
 @section('content')
+<br><br><br>
 <div class="container">
 <div>
     <img class="mySlides" src="images/1.jpg">
@@ -55,6 +56,9 @@
                           </li>
                      </ul>
     </p>
+
+
+    
 
   </div>
 </div>

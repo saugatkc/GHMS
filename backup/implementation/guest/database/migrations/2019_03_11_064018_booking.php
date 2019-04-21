@@ -22,6 +22,7 @@ class Booking extends Migration
                 $table->foreign('userId')->references('id')->on('users')->onDelete('cascade');
                 $table->unsignedInteger('roomId');
                 $table->foreign('roomId')->references('roomNo')->on('rooms')->onDelete('cascade');
+                $table->string('Status');
                 $table->timestamps();
                 
             });

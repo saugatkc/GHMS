@@ -62,12 +62,25 @@ class RoomController extends Controller
     // delete a room
     public function destroy($roomNo)
     {
+        $booking=DB::table('bookings')
+        ->select('bookings.*')
+        ->where('bookings.roomId','=',$roomNo)
+        ->get();
+                    if($booking->isEmpty())
+                {
+
          $room = Room::find($roomNo);
-         app('files')->delete($room->image);
+         $image=$room->image;
          $room->delete();
+         app('files')->delete($room->image);
          return redirect()->to('roomDetails')->with('success','Data Delete');
+                 }
+                 else{
+              return redirect()->to('roomDetails')->with('success','This room cannot be Deleted due to link in booking');
+                }
     }
 
+// fetch and send data to edit
      public function edit($id)
     {
         $room = Room::find($id);
@@ -120,19 +133,59 @@ class RoomController extends Controller
     }
 
 
-    public function search()
-    {
-            return view('system.searchroom');
-     
-    }
 
-    public function found(Request $request)
+
+    public function search(Request $request)
     {
-            $time_from = $request->checkIn;
-            $time_to = $request->checkOut;
-            $roomType=$request->roomType
-            $rooms = DB::select('select * from rooms where id not in (select roomId from bookings where time_from >= {{ $time_from }} OR time_to <= {{ $time_to group by roomId}}) ')
-        return view('system.avilabelRooms', compact('rooms', 'time_from', 'time_to'));
+        $checkIn = $request->checkIn;
+        $checkOut = $request->checkOut;
+        $roomType=$request->roomType;
+        $method = $request->method();
+        if ($request->isMethod('post')) {
+            $booked = DB::table('bookings')
+            ->select('bookings.roomId')
+            ->where('bookings.time_from','<=',$checkOut)
+            ->Where('bookings.time_to','>=',$checkIn)
+            ->groupBy('bookings.roomId')
+            ->get();
+
+            if(!$booked->isEmpty())
+            {
+                foreach ($booked as $book) {
+                $data[]=$book->roomId;
+                }
+
+                $rooms=DB::table('rooms')
+                ->select('rooms.*')
+                ->Where('rooms.roomType','=',$roomType)
+                ->whereNotIn('rooms.id',$data)
+                ->get();
+                if($rooms->isEmpty())
+                {
+                $rooms= null;
+                return view('system.searchroom', compact('rooms', 'checkIn', 'checkOut'))->with('success','No available room');
+                }  
+            }
+
+            else
+            {
+                $rooms=DB::table('rooms')
+                ->select('rooms.*')
+                ->Where('rooms.roomType','=',$roomType)
+                ->get();
+                if($rooms->isEmpty())
+                {
+                $rooms= null;
+                return view('system.searchroom', compact('rooms', 'checkIn', 'checkOut'))->with('success','No available room');
+                }  
+            }
+
+
+            
+        } else {
+            $rooms = null;
+        }
+        return view('system.searchroom', compact('rooms', 'checkIn', 'checkOut'));
     }
 }
 
