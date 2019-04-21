@@ -1,9 +1,9 @@
-@extends('layouts.layout')
+@extends('layouts.adminlayout')
 @section('title') Add room  @stop
 @section('content')
 <br><br><br><br>
  <div class="container">
-        <h2> Room control</h2>
+        <h2> Room Add Form</h2>
         @if(session()->has('success'))
             <div class="alert-success">
                 <h1> {!! session()->get('success') !!}</h1>
@@ -25,14 +25,14 @@
                 <form action="/room" method="post" enctype="multipart/form-data">
 
                     @csrf
-           		 <div class="form-group">
-              		 <select class="form-control{{ $errors->has('roomType') ? ' is-invalid' : '' }}" value="{{ old('roomType') }}" name="roomType" required>
-               		 <option class="mbr-text pl-5 mbr-fonts-style display-4" value=""> Select Room Type</option>
-               		 <option class="mbr-text pl-5 mbr-fonts-style display-4" value="singel">singel</option>
-                	 <option class="mbr-text pl-5 mbr-fonts-style display-4" value="coupel">coupel</option>
-                	 <option class="mbr-text pl-5 mbr-fonts-style display-4" value="family">family</option>
-             		 </select>
-          		 </div>
+               <div class="form-group">
+                   <select class="form-control{{ $errors->has('roomType') ? ' is-invalid' : '' }}" value="{{ old('roomType') }}" name="roomType" required>
+                   <option value=""> Select Room Type</option>
+                   <option  value="single">Single</option>
+                   <option  value="couple">Couple</option>
+                   <option  value="family">Family</option>
+                 </select>
+               </div>
                  <br>
 
                  <div class="form-group">

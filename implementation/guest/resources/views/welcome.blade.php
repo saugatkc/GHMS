@@ -9,6 +9,12 @@
         <script src="{!! url('bootstrap/js/jquery.min.js') !!}"></script>
         <script src="{!! url('bootstrap/js/bootstrap.min.js') !!}"></script>
     </head>
+    <style>
+        body{
+    background: url(images/background5.jpg);
+    background-size: 100%;
+}
+    </style>
 <body>
     <div >
      <div id="navi">
@@ -42,6 +48,8 @@
     
   </nav>
     </div>
+    <br><br><br>
+    <div class="container">
     <div>
     <img class="mySlides" src="images/1.jpg">
     <img class="mySlides" src="images/2.jpg">
@@ -68,12 +76,13 @@
   </div>
   <div width=20%>
     <P><U><h1> WELCOME TO TRISA GUEST HOUSE</h1></U><b></b></P>
-    <P>Welcome to the ancient city of kirtipur. Enjoy the unforgetable historical vaues of Newari cultural, tradations and religion at our guest houst with a breathing view of the himalayas and overlooking the kathmandu valley. Welcome to the atient city of kirtipur.</P>
+    <b><P>Welcome to the ancient city of kirtipur. Enjoy the unforgetable historical vaues of Newari cultural, tradations and religion at our guest houst with a breathing view of the himalayas and overlooking the kathmandu valley. Welcome to the atient city of kirtipur.</P></b>
     <img class="about" src="images/kirtipur.jpg">
     <p>
       <h3>Our facilities </h3>
     </p>
     <p>
+      <b>
       <ul>
                             
                          <li>
@@ -96,83 +105,57 @@
                           </li>
                      </ul>
     </p>
+    </b>
 
   </div>
-    <footer class="page-footer pt-4">
+</div>
+<footer class="page-footer pt-4">
     <div class="container">
        <div class="row">
        
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <ul class="address">
-                         <span>Address</span>    
                          <li>
-                           <p>PastimeSports@gmail.com</p>  
+                           <h2>Contact Us</h2>  
+                          </li>                            
+                         <li>
+                           <p><i class="fas fa-envelope"></i>Trisaguesthouse@gmail.com</p>  
                           </li>    
                           <li>
-                            <p>+9779849037243</p>
+                            <p><i class="fas fa-phone"></i>+9779849037243</p>
                           </li>    
                           <li>
-                            <p>Kirtipur, Kathmandu</p>
+                            <p><i class="fas fa-map-marker-alt"></i>PangaDobato, Kirtipur, Kathmandu, Nepal</p>
                           </li>
                      </ul>
-                </div>
-                
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <ul class="goto">
-                         <span>Goto</span>    
-                         <li>
-                            <a href="#">Home</a>
-                          </li>
-                               
-                          <li>
-                             <a href="#">Sport</a>
-                          </li>
-                               
-                          <li>
-                            <a href="#">About</a>
-                          </li>  
-                          <li>
-                             <a href="#">Forum </a>
-                          </li>     
-                          <li>
-                            <a href="#">Donation</a>
-                         </li>
-                         <li>
-                            <a href="#">Event</a>
-                         </li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <ul class="goto">
-                        <a data-target="#modalNews" data-toggle="modal"><h3 id="news">Newsletter<br></h3></a>
-                    </ul>
-                </div>
+                </div>         
            
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                    <ul class="social">
-                       <span>Social</span>    
                             <li>
-                             <a href="https://facebook.com"><i class="fab fa-facebook mr-4 fa-2x"></i></a>
+                             <h2>Social</h2>
+                            </li>                          
+                            <li>
+                             <a href="https://facebook.com"><i class="fab fa-facebook mr-4 fa-2x"></i>Facebook</a>
                             </li>
                               
                             <li>
-                              <a href="https://github.com"><i class="fab fa-github mr-4 fa-2x"></i></a>
+                              <a href="https://Instagram.com"><i class="fab fa-instagram mr-4 fa-2x"></i></i>Instagram</a>
                             </li>
                                 
                             <li>
-                              <a href="https://linkedin.com"><i class="fab fa-linkedin mr-4 fa-2x"></i></a>
+                              <a href="https://linkedin.com"><i class="fab fa-linkedin mr-4 fa-2x"></i>Linkedin</a>
                             </li>
                                
                             <li>
-                              <a href="https://twitter.com"><i class="fab fa-tumblr mr-4 fa-2x"></i></a>
+                              <a href="https://twitter.com"><i class="fab fa-tumblr mr-4 fa-2x"></i>Twitter</a>
                             </li>
                     </ul>
                 </div>
         </div> 
       <div class="footer-copyright text-muted text-center py-2">
         <p id="ftr">
-        © 2018 Copyright:<a href="#"> PastimeSports.com</a>
+        © 2019 All rights reserved
       </p>
       </div>
     </div>

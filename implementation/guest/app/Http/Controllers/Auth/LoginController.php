@@ -43,7 +43,7 @@ class LoginController extends Controller
          switch (Auth::user()->userType)
           {
                 case 'admin':
-                return'/roomDetails';
+                return '/stayingGuest';
                
                  default:
                 return '/home';
